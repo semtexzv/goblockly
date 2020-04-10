@@ -43,7 +43,7 @@ func runCoercionTest(t *testing.T, idx int, test coercionTest) {
 				t.Errorf(
 					"%s: expected %v to be %v, but conversion failed instead.",
 					test.name,
-					test.conversion,
+					test.conversion(),
 					test.expectedValue)
 			}
 		}
@@ -53,7 +53,7 @@ func runCoercionTest(t *testing.T, idx int, test coercionTest) {
 		t.Errorf(
 			"%s: expected %v to be %v, but was %v instead.",
 			test.name,
-			test.conversion,
+			test.conversion(),
 			test.expectedValue,
 			result)
 	}
